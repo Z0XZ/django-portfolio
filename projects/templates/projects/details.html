@@ -1,21 +1,19 @@
-{% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Details</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-      crossorigin="anonymous"
+{% extends 'projects/base.html' %} {% load static %} {% block content %}
+<h1>{{ projects.title }}</h1>
+<div class="row">
+  <div class="col-md-8">
+    <img
+      src="{% static projects.image %}"
+      alt="{{ projects.description }}"
+      width="100%"
     />
-  </head>
-  <body>
-    <img src="{% static projects.image %}" alt="{{ projects.description }}" />
-    <h1>{{ projects.title }}</h1>
-    <p>{{ projects.desctiption}}</p>
+  </div>
+  <div class="col-md-4">
+    <h5>About the project</h5>
+    <p>{{ projects.description}}</p>
+    <h5>Built with:</h5>
     <p>{{ projects.technology }}</p>
-  </body>
-</html>
+  </div>
+</div>
+
+{% endblock %}
