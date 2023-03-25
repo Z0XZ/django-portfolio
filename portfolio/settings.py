@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-iue^&w05sp4&p&zyz4ypscr=j8vy5b=1-1lziik-yqgj_ui@9_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["jonbo.no", "www.jonbo.no", "*.jonbo.no"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #My apps:
     'projects',
+    'markdownfield',
 ]
 
 MIDDLEWARE = [

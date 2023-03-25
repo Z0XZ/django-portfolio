@@ -3,18 +3,32 @@
   <h1>Projects</h1>
   <div class="row">
     {% for project in projects %}
-    <div class="col-md-4">
-      <div class="card mb-2">
-        <img class="card-img-top" src="{% static project.image %}" />
-        <div class="card-body">
-          <h5 class="card-title">{{ project.title }}</h5>
-          <p class="card-text">{{ project.description }}</p>
-          <a
-            href="{% url 'projects:project_details' project.pk %}"
-            class="btn btn-primary"
-          >
-            Read More
-          </a>
+    <div class="col-md-4 mb-2">
+      <div class="card">
+        <img class="card-img-top custom-img" src="{% static project.image %}" />
+        <div class="card-body custom-card-body">
+          <div class="row">
+            <h5 class="card-title col">{{ project.title }}</h5>
+            <p class="col">Created: {{ project.date|date:"d.m.Y" }}</p>
+          </div>
+          <div class="row mb-2">
+            <p class="card-text">{{ project.short_description | safe}}</p>
+          </div>
+          <div class="row">
+            <div class="d-flex justify-content-center">
+              <a
+                href="{% url 'projects:project_details' project.pk %}"
+                class="btn btn-primary stretched-link"
+              >
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-center">
+          <small class="text-muted">
+            Last updated: {{ project.last_updated|date:"H:i d.m.Y" }}
+          </small>
         </div>
       </div>
     </div>

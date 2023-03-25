@@ -1,0 +1,43 @@
+.custom-img {
+  height: 300px; /* Set the desired fixed height */
+  object-fit: cover; /* This property will make sure the images keep their aspect ratio while covering the full width and height */
+}
+
+.img-height-details {
+  height: 500px;
+  object-fit: contain;
+  object-position: left;
+}
+
+/* Equal height cards */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-md-4.custom-height {
+  display: flex;
+}
+
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card .card-body.custom-card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Limit the text length and add an ellipsis if too long */
+.card .card-body .card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Adjust this value to set the number of lines you want to display */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
